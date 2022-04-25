@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:textColor="@color/black"
-        android:text="o"/>
+        android:text="0"/>
     <Button
         android:layout_width="48dp"
         android:layout_height="48dp"
