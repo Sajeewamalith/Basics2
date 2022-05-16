@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -13,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
     int price =0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,13 +23,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+
+        CheckBox whippedCreamCheckBox = (CheckBox)findViewById(R.id.whipped_cream_checkbox);
+        boolean hasWhippedCream =  whippedCreamCheckBox.isChecked();
+
+        // for check Logcat
+        Log.v("ManActivity","Has whipped cream: "+hasWhippedCream);
+
         //displayPrice(quantity*5);
          price =  calculatePrice();
-        String priceMessage = createOrderSummary();
+        String priceMessage = createOrderSummary(hasWhippedCream);
         displayMessage(priceMessage);
 
     }
@@ -74,8 +86,8 @@ public class MainActivity extends AppCompatActivity {
         return priceB;
     }
 
-    private String createOrderSummary(){
-        String summary = "Name = Kaptain kunal"+"\nQuantity :"+quantity+"\nTotal: $"+price +"\nThank You!";
+    private String createOrderSummary(boolean hasWhippedCream){
+        String summary = "Name = Kaptain kunal"+"\nAdd Whipped cream? "+hasWhippedCream+"\nQuantity :"+quantity+"\nTotal: $"+price +"\nThank You!";
         return summary ;
     }
 
