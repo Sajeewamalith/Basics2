@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -39,9 +40,11 @@ public class MainActivity extends AppCompatActivity {
         CheckBox chocolateCheckBox = (CheckBox)findViewById(R.id.chocolate_checkbox);
         boolean hasChocolate =  chocolateCheckBox.isChecked();
 
+        EditText nameEditText = (EditText) findViewById(R.id.name_edit_text);
+        String getName = nameEditText.getText().toString();
         //displayPrice(quantity*5);
          price =  calculatePrice();
-        String priceMessage = createOrderSummary(hasWhippedCream,hasChocolate);
+        String priceMessage = createOrderSummary(hasWhippedCream,hasChocolate,getName);
         displayMessage(priceMessage);
 
     }
@@ -89,9 +92,17 @@ public class MainActivity extends AppCompatActivity {
         return priceB;
     }
 
-    private String createOrderSummary(boolean hasWhippedCream,boolean hasChocolate){
-        String summary = "Name = Kaptain kunal"+"\nAdd Whipped cream? "+hasWhippedCream+"\nAdd Chocolate? "+hasChocolate+"\nQuantity :"+quantity+"\nTotal: $"+price +"\nThank You!";
+    private String createOrderSummary(boolean hasWhippedCream,boolean hasChocolate,String name){
+        String summary = "Name = "+name+"\nAdd Whipped cream? "+hasWhippedCream+"\nAdd Chocolate? "+hasChocolate+"\nQuantity :"+quantity+"\nTotal: $"+price +"\nThank You!";
         return summary ;
+
+      //  String priceMessage = "Name: Lyla the Labyrinth";
+      //  priceMessage += "\nAdd whipped cream? " + addWhippedCream;
+      //  priceMessage += "\nAdd chocolate? " + addChocolate;
+      //  priceMessage += "\nQuantity: " + quantity;
+      //  priceMessage += "\nTotal: $" + price;
+      //  priceMessage += "\nThank you!";
+      //  return priceMessage;
     }
 
 
