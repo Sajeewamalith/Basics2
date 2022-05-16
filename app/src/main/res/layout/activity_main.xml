@@ -5,6 +5,19 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toppings"
+        android:textAllCaps="true"
+        android:textStyle="bold"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Whipped cream"
+        android:paddingLeft="24dp"
+        android:textSize="16sp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
