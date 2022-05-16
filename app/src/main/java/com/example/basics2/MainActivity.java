@@ -62,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the + button is clicked.
      */
     public void increment(View view) {
+        // max order
+        if(quantity ==100){
+           return;
+        }
         quantity= quantity+1;
         display(quantity);
     }
@@ -69,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the - button is clicked.
      */
     public void decrement(View view) {
+        // less order
+        if(quantity ==1){
+            return;
+        }
         quantity = quantity-1;
         display(quantity);
     }
