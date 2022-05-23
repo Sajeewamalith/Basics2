@@ -1,8 +1,8 @@
 package com.example.basics2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.NumberFormat;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,21 +33,35 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
 
         CheckBox whippedCreamCheckBox = (CheckBox)findViewById(R.id.whipped_cream_checkbox);
-        boolean hasWhippedCream =  whippedCreamCheckBox.isChecked();
+       boolean hasWhippedCream =  whippedCreamCheckBox.isChecked();
 
         // for check Logcat
         Log.v("ManActivity","Has whipped cream: "+hasWhippedCream);
 
-        CheckBox chocolateCheckBox = (CheckBox)findViewById(R.id.chocolate_checkbox);
+
+      CheckBox chocolateCheckBox = (CheckBox)findViewById(R.id.chocolate_checkbox);
         boolean hasChocolate =  chocolateCheckBox.isChecked();
-
         EditText nameEditText = (EditText) findViewById(R.id.name_edit_text);
-        String getName = nameEditText.getText().toString();
-        //displayPrice(quantity*5);
+       String getName = nameEditText.getText().toString();
 
+        //displayPrice(quantity*5);
         price =  calculatePrice(hasWhippedCream,hasChocolate );
         String priceMessage = createOrderSummary(hasWhippedCream,hasChocolate,getName);
+
+        /**
+         * add Email intent to go Email App
+         * All intent activities are not work (Error)
+         */
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Just Java order for "+getName);
+        intent.putExtra(Intent.EXTRA_TEXT,priceMessage );
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
         displayMessage(priceMessage);
+
+
 
     }
 
@@ -115,13 +129,11 @@ public class MainActivity extends AppCompatActivity {
             basePrice = basePrice+2;
         }
 
-        int priceB = quantity * basePrice;
-        return priceB;
+        return quantity * basePrice;
     }
 
     private String createOrderSummary(boolean hasWhippedCream,boolean hasChocolate,String name){
-        String summary = "Name = "+name+"\nAdd Whipped cream? "+hasWhippedCream+"\nAdd Chocolate? "+hasChocolate+"\nQuantity :"+quantity+"\nTotal: $"+price +"\nThank You!";
-        return summary ;
+        return "Name = "+name+"\nAdd Whipped cream? "+hasWhippedCream+"\nAdd Chocolate? "+hasChocolate+"\nQuantity :"+quantity+"\nTotal: $"+price +"\nThank You!";
 
       //  String priceMessage = "Name: Lyla the Labyrinth";
       //  priceMessage += "\nAdd whipped cream? " + addWhippedCream;
@@ -131,6 +143,6 @@ public class MainActivity extends AppCompatActivity {
       //  priceMessage += "\nThank you!";
       //  return priceMessage;
     }
-
+   
 
 }

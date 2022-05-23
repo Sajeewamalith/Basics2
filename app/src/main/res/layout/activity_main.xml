@@ -156,12 +156,7 @@
         android:textAllCaps="true"/>
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Order"
-        android:onClick="submitOrder"/>
+
 
 
 
@@ -214,12 +209,6 @@
         android:textAllCaps="true"/>
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Order"
-        android:onClick="submitOrder"/>
 
 
 
@@ -271,12 +260,6 @@
         android:textAllCaps="true"/>
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Order"
-        android:onClick="submitOrder"/>
 </LinearLayout>
 
 </ScrollView>
