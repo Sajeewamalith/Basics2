@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Basics2</string>
+
+    -- Header text for the list of toppings[CHAR LIMIT=20] __>
+   <string name="toppings" translatable="false">Topp</string>
+
+   <!-- Thank you message for the order summary. [CHAR LIMIT=NONE] -->
+    <string name="thank_you" translatable="false">¡Gracias!</string>
 </resources>

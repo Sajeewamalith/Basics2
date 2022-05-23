@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String createOrderSummary(boolean hasWhippedCream,boolean hasChocolate,String name){
-        return "Name = "+name+"\nAdd Whipped cream? "+hasWhippedCream+"\nAdd Chocolate? "+hasChocolate+"\nQuantity :"+quantity+"\nTotal: $"+price +"\nThank You!";
+        return "Name = "+name+"\nAdd Whipped cream? "+hasWhippedCream+"\nAdd Chocolate? "+hasChocolate+"\nQuantity :"+quantity+"\nTotal: $"+price +"\n"+ getString(R.string.thank_you);
 
       //  String priceMessage = "Name: Lyla the Labyrinth";
       //  priceMessage += "\nAdd whipped cream? " + addWhippedCream;
