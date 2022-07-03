@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:hint="Name"/>
+        android:hint="@string/name"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
         android:id="@+id/whipped_cream_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Whipped cream"
+        android:text="@string/whipped_cream"
         android:paddingLeft="24dp"
         android:textSize="16sp"/>
 
@@ -38,7 +38,7 @@
         android:id="@+id/chocolate_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chocolate"
+        android:text="@string/chocolate"
         android:paddingLeft="24dp"
         android:textSize="16sp"/>
     <TextView
@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="16dp"
-        android:text="Quantity"
+        android:text="@string/quantity"
         android:textAllCaps="true"
         android:textStyle="bold"/>
     <LinearLayout
@@ -99,7 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Order"
+        android:text="@string/order"
         android:onClick="submitOrder"/>
 
 

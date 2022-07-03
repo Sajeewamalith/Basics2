@@ -4,6 +4,12 @@
     -- Header text for the list of toppings[CHAR LIMIT=20] __>
    <string name="toppings" translatable="false">Topp</string>
 
-   <!-- Thank you message for the order summary. [CHAR LIMIT=NONE] -->
-    <string name="thank_you" translatable="false">¡Gracias!</string>
+    <string name="name" translatable="false">Name</string>
+    <string name="whipped_cream" translatable="false">Whipped Cream</string>
+    <string name="chocolate" translatable="false">Chocolate</string>
+    <string name="quantity" translatable="false">quantity</string>
+    <string name="order" translatable="false">Order</string>
+
+    <!-- Thank you message for the order summary. [CHAR LIMIT=NONE] -->
+    <string name="thank_you" translatable="false">Thank you!</string>
 </resources>
