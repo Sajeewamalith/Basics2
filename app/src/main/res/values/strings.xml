@@ -2,7 +2,7 @@
     <string name="app_name">Basics2</string>
 
     -- Header text for the list of toppings[CHAR LIMIT=20] __>
-   <string name="toppings" translatable="false">Topp</string>
+   <string name="toppings" translatable="false">toppings</string>
 
     <string name="name" translatable="false">Name</string>
     <string name="whipped_cream" translatable="false">Whipped Cream</string>
