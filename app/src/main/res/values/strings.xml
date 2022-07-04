@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Basics2</string>
+    <string name="app_name">Just Java</string>
 
     -- Header text for the list of toppings[CHAR LIMIT=20] __>
    <string name="toppings" translatable="false">toppings</string>
