@@ -1,5 +1,4 @@
-# Basics2
-#Android
-#Android Basics(User Input) course
-# ordering App
-# Check Commit
+Basics2 - ordering App
+
+Android Basics(User Input) course
+
